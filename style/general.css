@@ -7,6 +7,10 @@ body {
     
 }
 
+.button, .js-input {
+    font-family: 'Roboto', sans-serif;
+}
+
 .main-container {
     display: flex;
     justify-content: center;
@@ -14,7 +18,7 @@ body {
     align-items: center;
     margin: 80px 200px;    
     padding: 12px 20px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     border-radius: 25px;
     background: rgb(255,255,255);
     background: linear-gradient(180deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.10) 28%, rgba(255,255,255,0.46) 40%, rgba(255,255,255,1) 60%);
@@ -54,7 +58,6 @@ button {
     white-space: nowrap;
     background-color: #C6C6C6;
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     
 }
@@ -73,7 +76,6 @@ button:hover {
 }
 
 .js-input {
-    font-family: 'Roboto', sans-serif;
     font-size: 50px;
     font-weight: 400;
     width: 240px;
