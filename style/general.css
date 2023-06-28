@@ -75,6 +75,10 @@ button:hover {
     
 }
 
+input:focus {
+    outline: none;
+}
+
 .js-input {
     font-size: 50px;
     font-weight: 400;
@@ -83,6 +87,7 @@ button:hover {
     border-style: none;
     background-color: transparent;
     text-align: right;
+    caret-color: transparent;
     
 }
 
