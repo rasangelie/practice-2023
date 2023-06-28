@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="calculator style\general.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
         <title>Calculator</title>
     </head>
     <body>
@@ -11,33 +14,146 @@
         <div class="main-container">
             
             <div class="text">
-                <input type="text">
+                <p class="js-input"></p>
+                <!-- <input class="hehe" type="text"> -->
             </div>
             
             <div class="button-container">
-                <button class="dark">AC</button>
+                <button onclick="
+                    calculation = '';
+                    console.log(calculation);
+                    showCalculation();
+                    saveCalculation();"
+                    class="dark">
+                    AC
+                </button>
+
                 <button class="dark">+/-</button>
+
                 <button class="dark">%</button>
-                <button class="orange"> &#xF7;</button>
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button class="orange">&#215;</button>
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button class="orange">-</button>
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button class="orange">+</button>
+
+                <button onclick="
+                    calculate('/');"
+                    class="orange">
+                    &#xF7;
+                </button>
+
+                <button onclick="
+                    calculate('7');">
+                    7
+                </button>
+
+                <button onclick="
+                    calculate('8');">
+                    8
+                </button>
+
+                <button onclick="
+                    calculate('9');">
+                    9
+                </button>
+
+                <button onclick="
+                    calculate('*');"
+                    class="orange">
+                    &#215;
+                </button>
+
+                <button onclick="
+                    calculate('4');">
+                    4
+                </button>
+
+                <button onclick="
+                    calculate('5');">
+                    5
+                </button>
+
+                <button onclick="
+                    calculate('6');">
+                    6
+                </button>
+
+                <button onclick="
+                    calculate('-');"
+                    class="orange">
+                    -
+                </button>
+
+                <button onclick="
+                    calculate('1');">
+                    1
+                </button>
+
+                <button onclick="
+                    calculate('2');">
+                    2
+                </button>
+
+                <button onclick="
+                    calculate('3');">
+                    3
+                </button>
+
+                <button onclick="
+                    calculate('+');"
+                    class="orange">
+                    +
+                </button>
+
             </div>
             <div class="last-buttons">
-                <button class="zero">0</button>
-                <button class="last">.</button>
-                <button class="last orange">=</button>
+                <button onclick="
+                    calculate('0');"
+                    class="zero">
+                    0
+                </button>
+
+                <button onclick="
+                    calculate('.');"
+                    class="last">
+                    .
+                </button>
+                
+                <button onclick="
+                    calculation = eval(calculation);
+                    console.log(calculation);
+                    showCalculation();
+
+                    saveCalculation();"
+                    class="last orange">
+                    =
+                </button>
             </div>
         </div>
+        
+
+        <script>
+            let calculation = localStorage.getItem('calculation') || '';
+
+            function calculate(value) {
+                calculation += value;
+                console.log(calculation);
+
+                showCalculation();
+
+                localStorage.setItem('calculation', calculation);
+            }
+
+            // Optional: you can also create a function in order
+            // to reuse this code.
+            function saveCalculation() {
+            localStorage.setItem('calculation', calculation);
+            }
+
+            function showCalculation() {
+                console.log(document.querySelector('.js-input')
+                    .innerHTML = calculation);
+                
+            }
+
+
+        </script>
 
     </body>
 </html>
